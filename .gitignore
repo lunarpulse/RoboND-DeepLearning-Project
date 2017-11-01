@@ -6,6 +6,8 @@ __pycache__/
 
 # C extensions
 *.so
+data/processed_sim_data/
+data/raw_sim_data/
 
 # Distribution / packaging
 .Python
