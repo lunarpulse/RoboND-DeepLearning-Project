@@ -308,7 +308,7 @@ run 0 to run 2.2 was further training to get a local minima for the training wit
    \label{fig:AnalysisRun23}
 \end{figure}
 \paragraph{Run2.3}\label{rubric70}
-The highest score (43\%) in Run 2 series were recorded with Run 2.3. The total traine
+The highest score (43\%) in Run 2 series were recorded with Run 2.3 in file~\href{run:../code/model_training.ipynb}{run 2.3 noteboook}. This run had reached a  local minimum of loss function and performs well with the following mode, and with target mode although the with no target mode still records 23 percent.
 
 \begin{figure}	
 	\begin{subfigure}{0.45\textwidth}
@@ -477,7 +477,6 @@ The important take way from the training section is to start from a resonable hy
 
 \paragraph{Different architecture}
 One of my thought based on reviewing the scoring method of this project, the it might be more plausible to have two different streams of FCN to identify hero in distant and close ranges because mostly the model suffers inaccuracy in identification of distant objects. This is because of the single stream architecture FCN is more likely to specialised object recognition in proximity as the the first few layers of weights recognise the simple features of the heroin and the overall shape is recognised by the later layers. However, the shape of heroin does not have much details and size of is as small as the simple features can be detected by weights in the first layer of the network. To circumvent this, train another stream of FCN specialised for recognising heroin in distance by setting smaller filter sizes and feeding only training data sets with heroin in distance with other various objects and environment. By merging it carefully, actually this is the challenging part to do so and have incepeted the solution yet, the dual stream FCN may be able to recognise obejects both in proximity, and distance.
-Another recommended arthitectural change is to embrace an autoencoder before the 1x1 convoluion layer. With an autoencoder, model can learn without supervision, providing that a well sorted inputs are only fed into neural networks, preprocessing will not be neccessary.
 \paragraph{More data collection}
 Due to the data deficiency in the provided data, especially the variety of scenes with a hero in distance, a well planned data acquisition is needed as shown in the data collection failure case of run 2.4 and run 2.5. 
 \paragraph{Different Parameters}
